@@ -1,4 +1,12 @@
-#include <stdio.h>
+#include <stdio.h> 
+#include <stdlib.h>
+#include <unistd.h>
+#include <libgen.h>
+#include <errno.h>
+#include <string.h>
+#include <getopt.h>
+#include <sys/types.h>
+
 
 /* print Fahrenheit-Celsius table for far = 0, 20, ..., 300 */
 
@@ -18,4 +26,30 @@ int main()
 		fahr = fahr + step;
 	}
 }
+
+
+int main1()
+{ 
+	float fahr, celsius;
+	float lower, upper, step;
+
+	lower = 0;
+	upper = 300;
+	step = 30;
+
+	fahr = lower;
+	while (fahr <= upper) {
+		celsius = (5.0/9.0) * (fahr-32.0);
+		printf("%10.0f %15.2f\n", fahr, celsius);
+		fahr = fahr + step;
+	}
+}
+		
+
+char* main2()
+{
+	printf("hello world\n");
+}
+
+
 
